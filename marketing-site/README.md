@@ -42,6 +42,32 @@ Portfolio cards are rendered from the `PROJECTS` array near the top of the `<scr
 in `index.html`. Add, remove or reorder entries there — each needs `tag`, `titleEn`, `titleAr`,
 `img` and `alt`.
 
+## Editing the Construction & Finishing process
+The stages shown in the "Construction & Finishing Process" section are rendered from the
+`PHASES` array in the `<script>` block. Each phase has an English + Arabic title, a thumbnail
+`img`, and `groups`; each group has an English + Arabic sub-title and a list of `steps`, where
+every step is a `[English, العربية]` pair. Add/edit/reorder freely — the page rebuilds the
+accordion from this list.
+
+## Admin — upload & publish photos yourself
+Every photo on the site can be swapped from your browser, no code needed.
+
+1. **Open admin mode:** add `?admin` to the site URL, e.g.
+   `https://msalfahad.github.io/UrbanProjectkw/?admin`
+2. **Swap a photo:** every photo gets a dashed gold outline. Click one, pick an image from your
+   device — it's resized automatically and previews instantly. This preview is saved **in your
+   browser only** (great for experimenting; visitors don't see it yet).
+3. **Publish for everyone:** paste a GitHub token into the admin bar and press **Publish to
+   website**. Your changed photos are committed to the repo and go live in ~1–2 minutes.
+   - Create the token at **github.com → Settings → Developer settings → Fine-grained tokens →
+     Generate new token**. Give it access to **only** the `UrbanProjectkw` repo, with
+     **Repository permissions → Contents → Read and write**. Paste it once; it's stored only in
+     your browser.
+4. **Reset photos** removes your local changes; **Exit** leaves admin mode.
+
+Each photo is its own file in `images/` (e.g. `hero.jpg`, `project-1.jpg`, `phase-1.jpg`,
+`gallery-1.jpg`), so swapping one never affects the others.
+
 ## Deploying to Firebase Hosting
 This folder is wired up as a second Firebase Hosting site (target `marketing`), separate from
 the Flutter app's site (target `app`), via `firebase.json` and `.firebaserc` at the repo root.

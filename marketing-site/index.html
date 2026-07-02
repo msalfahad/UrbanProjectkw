@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Urban Projects — We Build What Moves You</title>
-<meta name="description" content="Urban Projects — construction, real estate and development. From foundations to finished landmarks, we design, build and manage with a team obsessed with detail.">
+<title>Urban Projects — Construction & Finishing</title>
+<meta name="description" content="Urban Projects — construction and finishing in Kuwait. From receiving the land to final handover, we build and finish with a team obsessed with detail.">
 
 <!-- Favicon (from brand logo) -->
 <link rel="icon" type="image/png" href="images/logo-transparent.png">
@@ -12,14 +12,14 @@
 
 <!-- Open Graph / social preview — update og:url and og:image to an absolute URL once the site has a live domain -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Urban Projects — We Build What Moves You">
-<meta property="og:description" content="Construction, real estate and development. From foundations to finished landmarks, we design, build and manage with a team obsessed with detail.">
+<meta property="og:title" content="Urban Projects — Construction & Finishing">
+<meta property="og:description" content="Construction and finishing in Kuwait. From receiving the land to final handover, we build and finish with a team obsessed with detail.">
 <meta property="og:image" content="images/hero.jpg">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Urban Projects — We Build What Moves You">
-<meta name="twitter:description" content="Construction, real estate and development. From foundations to finished landmarks, we design, build and manage with a team obsessed with detail.">
+<meta name="twitter:title" content="Urban Projects — Construction & Finishing">
+<meta name="twitter:description" content="Construction and finishing in Kuwait. From receiving the land to final handover, we build and finish with a team obsessed with detail.">
 <meta name="twitter:image" content="images/hero.jpg">
 
 <!-- Fonts: serif display, clean sans, Arabic -->
@@ -336,6 +336,56 @@ a{color:inherit;text-decoration:none}
   .hero-actions .btn{width:100%;justify-content:center}
 }
 
+/* ============ PROCESS (construction & finishing phases) ============ */
+.process{padding:clamp(5rem,11vw,8rem) 0}
+.phase{border-top:1px solid var(--line)}
+.phase:last-child{border-bottom:1px solid var(--line)}
+.phase-head{display:grid;grid-template-columns:2.4rem 92px 1fr auto;gap:1.4rem;align-items:center;
+  padding:1.4rem 0;cursor:pointer;transition:padding-inline .5s var(--ease),background .4s;width:100%;text-align:left;
+  background:none;border:none;color:inherit;font:inherit}
+.phase-head:hover{padding-inline:.6rem}
+.phase-num{font-family:var(--sans);font-size:.82rem;color:var(--gold);letter-spacing:.06em}
+.phase-thumb{width:92px;height:66px;object-fit:cover;border-radius:3px;filter:saturate(.9) brightness(.82)}
+.phase-title h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,3.4vw,2.3rem);line-height:1.06}
+.phase-title h3 .ar{font-family:var(--ar);color:var(--gold);font-size:.6em;margin-left:.8rem;direction:ltr;unicode-bidi:plaintext;font-weight:500}
+.phase-toggle{font-size:1.7rem;color:var(--gold);transition:transform .45s var(--ease);line-height:1}
+.phase.open .phase-toggle{transform:rotate(45deg)}
+.phase-body{max-height:0;overflow:hidden;transition:max-height .6s var(--ease)}
+.phase.open .phase-body{max-height:2600px}
+.phase-body-inner{padding:.4rem 0 2.2rem;padding-left:calc(2.4rem + 1.4rem);
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.6rem 1.8rem}
+.pgroup h4{font-family:var(--sans);font-size:.8rem;letter-spacing:.05em;color:var(--cream);margin-bottom:.7rem;text-transform:uppercase}
+.pgroup h4 .ar{font-family:var(--ar);color:var(--gold);letter-spacing:0;text-transform:none;margin-left:.5rem;font-size:1.05em;direction:ltr;unicode-bidi:plaintext}
+.pgroup ul{list-style:none;display:grid;gap:.45rem}
+.pgroup li{font-size:.9rem;color:var(--text-dim);padding-left:1rem;position:relative;line-height:1.4}
+.pgroup li::before{content:"–";position:absolute;left:0;color:var(--gold)}
+.pgroup li .ar{font-family:var(--ar);display:block;color:rgba(245,241,234,.5);font-size:.9em;direction:ltr;unicode-bidi:plaintext;margin-top:.1rem}
+@media(max-width:640px){
+  .phase-head{grid-template-columns:2rem 1fr auto;gap:.9rem}
+  .phase-thumb{display:none}
+  .phase-body-inner{padding-left:0;grid-template-columns:1fr}
+}
+
+/* ================= ADMIN (photo manager) ================= */
+body.admin-on [data-img-key]{outline:2px dashed var(--gold);outline-offset:-2px;cursor:pointer;position:relative}
+body.admin-on [data-img-key]:hover{outline-color:var(--cream)}
+.admin-bar{position:fixed;left:0;right:0;bottom:0;z-index:3000;background:rgba(10,10,12,.97);
+  border-top:1px solid var(--gold);padding:.7rem clamp(.8rem,3vw,1.4rem);
+  display:none;gap:.7rem;flex-wrap:wrap;align-items:center;font-family:var(--sans);font-size:.82rem;color:var(--cream)}
+body.admin-on .admin-bar{display:flex}
+.admin-bar .tag{background:var(--gold);color:var(--black);padding:.25rem .6rem;border-radius:2px;font-weight:600;letter-spacing:.05em}
+.admin-bar .status{color:var(--text-dim);flex:1 1 220px;min-width:160px}
+.admin-bar input{background:var(--char-2);border:1px solid var(--line);color:var(--cream);
+  padding:.45rem .65rem;border-radius:2px;font-size:.8rem;flex:1 1 200px;min-width:150px}
+.admin-bar button{background:var(--gold);color:var(--black);border:none;padding:.5rem .85rem;border-radius:2px;
+  cursor:pointer;font-size:.78rem;font-weight:600;letter-spacing:.03em;transition:opacity .3s}
+.admin-bar button:hover{opacity:.85}
+.admin-bar button.ghost{background:transparent;color:var(--cream);border:1px solid var(--line);font-weight:400}
+.admin-bar button:disabled{opacity:.5;cursor:default}
+.admin-help{position:fixed;top:0;left:0;right:0;z-index:3000;background:var(--gold);color:var(--black);
+  text-align:center;padding:.5rem 1rem;font-family:var(--sans);font-size:.82rem;font-weight:500;display:none}
+body.admin-on .admin-help{display:block}
+
 /* reduced motion */
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition-duration:.01ms!important}
@@ -358,7 +408,7 @@ a{color:inherit;text-decoration:none}
   <ul class="nav-links" id="navLinks">
     <li><a href="#top"><span>Home</span><span class="l-ar ar">الرئيسية</span></a></li>
     <li><a href="#projects"><span>Projects</span><span class="l-ar ar">المشاريع</span></a></li>
-    <li><a href="#services"><span>Services</span><span class="l-ar ar">الخدمات</span></a></li>
+    <li><a href="#process"><span>Process</span><span class="l-ar ar">المراحل</span></a></li>
     <li><a href="#why"><span>About</span><span class="l-ar ar">من نحن</span></a></li>
     <li><a href="#contact" class="nav-cta">Contact · تواصل</a></li>
   </ul>
@@ -367,10 +417,10 @@ a{color:inherit;text-decoration:none}
 
 <!-- ==================== HERO ==================== -->
 <header class="hero" id="top" tabindex="-1">
-  <div class="hero-bg" data-parallax="0.25"><img src="images/hero.jpg" alt="City skyline under construction"></div>
+  <div class="hero-bg" data-parallax="0.25"><img src="images/hero.jpg" data-img-key="hero" alt="City skyline under construction"></div>
   <div class="hero-veil"></div>
   <div class="hero-inner">
-    <span class="eyebrow reveal">Construction · Real Estate · Development</span>
+    <span class="eyebrow reveal">Construction &amp; Finishing <span class="ar">إنشاءات وتشطيبات</span></span>
     <h1>
       <span class="mask en"><span>We Build What Moves You</span></span>
       <span class="mask ar"><span>نبني ما يحرّكك</span></span>
@@ -389,7 +439,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- ==================== INTRO STATEMENT ==================== -->
 <section class="intro">
-  <div class="intro-bg" data-parallax="0.18"><img src="images/intro.jpg" alt="Architectural detail" loading="lazy"></div>
+  <div class="intro-bg" data-parallax="0.18"><img src="images/intro.jpg" data-img-key="intro" alt="Architectural detail" loading="lazy"></div>
   <div class="intro-inner wrap">
     <h2 class="mask"><span>This isn't just <span class="hl">construction.</span>
       <span class="ar">ليست مجرد إنشاءات.</span></span></h2>
@@ -403,7 +453,7 @@ a{color:inherit;text-decoration:none}
 <!-- ==================== LOGO REVEAL ==================== -->
 <section class="logoreveal">
   <div class="wrap reveal">
-    <div class="word">URBAN</div>
+    <div class="word" data-img-key="logofill">URBAN</div>
     <div class="sub">Projects <span class="ar">المشاريع الحضرية</span></div>
   </div>
 </section>
@@ -420,51 +470,26 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<!-- ==================== SERVICES ==================== -->
-<section class="services wrap" id="services">
+<!-- ==================== PROCESS (Construction & Finishing) ==================== -->
+<section class="process wrap" id="process">
   <div class="section-head">
-    <h2 class="mask"><span>What We Do <span class="ar">ماذا نقدّم</span></span></h2>
-    <p class="reveal d1">Four disciplines, one standard of craft.
-      <span class="ar">أربعة تخصّصات ومعيار واحد من الإتقان.</span></p>
+    <h2 class="mask"><span>Construction &amp; Finishing Process <span class="ar">مراحل البناء والتشطيبات</span></span></h2>
+    <p class="reveal d1">Our full method in Kuwait — from receiving the land to final handover. Tap any stage to open it.
+      <span class="ar">منهجيتنا الكاملة في الكويت — من استلام الأرض حتى التسليم النهائي. اضغط أي مرحلة لفتحها.</span></p>
   </div>
-
-  <div class="srv-row reveal"><div class="srv-bg"><img src="images/service-1.jpg" alt="" loading="lazy"></div>
-    <span class="srv-num">01</span>
-    <div class="srv-title"><h3>Build <span class="ar">البناء</span></h3>
-      <p>Ground-up construction managed end to end — on time, on budget, to spec.
-        <span class="ar">إنشاء متكامل يُدار من البداية للنهاية — في الوقت والميزانية والمواصفات.</span></p></div>
-    <span class="srv-arrow">→</span></div>
-
-  <div class="srv-row reveal"><div class="srv-bg"><img src="images/service-2.jpg" alt="" loading="lazy"></div>
-    <span class="srv-num">02</span>
-    <div class="srv-title"><h3>Develop <span class="ar">التطوير</span></h3>
-      <p>Turning land and vision into profitable, livable, lasting places.
-        <span class="ar">نحوّل الأرض والرؤية إلى أماكن مربحة وصالحة للعيش وباقية.</span></p></div>
-    <span class="srv-arrow">→</span></div>
-
-  <div class="srv-row reveal"><div class="srv-bg"><img src="images/service-3.jpg" alt="" loading="lazy"></div>
-    <span class="srv-num">03</span>
-    <div class="srv-title"><h3>Invest <span class="ar">الاستثمار</span></h3>
-      <p>Real-estate opportunities sourced, structured and managed for growth.
-        <span class="ar">فرص عقارية نختارها ونُهيكلها وندير نموّها.</span></p></div>
-    <span class="srv-arrow">→</span></div>
-
-  <div class="srv-row reveal"><div class="srv-bg"><img src="images/service-4.jpg" alt="" loading="lazy"></div>
-    <span class="srv-num">04</span>
-    <div class="srv-title"><h3>Manage <span class="ar">الإدارة</span></h3>
-      <p>Property and facility management that protects and grows your asset.
-        <span class="ar">إدارة عقارات ومرافق تحمي أصولك وتنمّيها.</span></p></div>
-    <span class="srv-arrow">→</span></div>
+  <div class="phase-list" id="phaseList">
+    <!-- rendered from the PHASES array in the script below -->
+  </div>
 </section>
 
 <!-- ==================== GALLERY STRIP ==================== -->
 <section class="gallery">
   <div class="gal-track" id="galTrack" data-parallax-x="0.15">
-    <div class="gal-item"><img src="images/gallery-1.jpg" alt="Construction crew working on site" loading="lazy"><span class="cap">On site <span class="ar">في الموقع</span></span></div>
-    <div class="gal-item"><img src="images/gallery-2.jpg" alt="Building structural framework" loading="lazy"><span class="cap">Structure <span class="ar">الهيكل</span></span></div>
-    <div class="gal-item"><img src="images/gallery-3.jpg" alt="Interior finishing work in progress" loading="lazy"><span class="cap">Finishing <span class="ar">التشطيب</span></span></div>
-    <div class="gal-item"><img src="images/gallery-4.jpg" alt="Completed project ready for handover" loading="lazy"><span class="cap">Handover <span class="ar">التسليم</span></span></div>
-    <div class="gal-item"><img src="images/project-2.jpg" alt="Gold District Offices skyline view" loading="lazy"><span class="cap">Skyline <span class="ar">الأفق</span></span></div>
+    <div class="gal-item"><img src="images/gallery-1.jpg" data-img-key="gallery-1" alt="Construction crew working on site" loading="lazy"><span class="cap">On site <span class="ar">في الموقع</span></span></div>
+    <div class="gal-item"><img src="images/gallery-2.jpg" data-img-key="gallery-2" alt="Building structural framework" loading="lazy"><span class="cap">Structure <span class="ar">الهيكل</span></span></div>
+    <div class="gal-item"><img src="images/gallery-3.jpg" data-img-key="gallery-3" alt="Interior finishing work in progress" loading="lazy"><span class="cap">Finishing <span class="ar">التشطيب</span></span></div>
+    <div class="gal-item"><img src="images/gallery-4.jpg" data-img-key="gallery-4" alt="Completed project ready for handover" loading="lazy"><span class="cap">Handover <span class="ar">التسليم</span></span></div>
+    <div class="gal-item"><img src="images/gallery-5.jpg" data-img-key="gallery-5" alt="Finished landmark skyline view" loading="lazy"><span class="cap">Skyline <span class="ar">الأفق</span></span></div>
   </div>
 </section>
 
@@ -539,7 +564,7 @@ a{color:inherit;text-decoration:none}
         <h4>Explore</h4>
         <ul>
           <li><a href="#projects">Projects <span class="ar">المشاريع</span></a></li>
-          <li><a href="#services">Services <span class="ar">الخدمات</span></a></li>
+          <li><a href="#process">Process <span class="ar">المراحل</span></a></li>
           <li><a href="#why">About <span class="ar">من نحن</span></a></li>
           <li><a href="#contact">Contact <span class="ar">تواصل</span></a></li>
         </ul>
@@ -560,6 +585,18 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </footer>
+
+<!-- ==================== ADMIN PHOTO MANAGER (hidden; open with ?admin) ==================== -->
+<div class="admin-help">Admin mode · Click any highlighted photo to replace it. <span class="ar">اضغط أي صورة لتغييرها</span></div>
+<div class="admin-bar" id="adminBar">
+  <span class="tag">ADMIN</span>
+  <span class="status" id="adminStatus">Click a highlighted photo to swap it. Changes preview on this device.</span>
+  <input type="password" id="adminToken" placeholder="GitHub token (only needed to publish)" autocomplete="off">
+  <button id="adminPublish">Publish to website</button>
+  <button class="ghost" id="adminReset">Reset photos</button>
+  <button class="ghost" id="adminExit">Exit</button>
+  <input type="file" id="adminFile" accept="image/*" hidden>
+</div>
 
 <script>
 /* ---------- year ---------- */
@@ -594,7 +631,7 @@ const projGrid = document.getElementById('projGrid');
 projGrid.innerHTML = PROJECTS.map((p, i) => `
   <article class="proj reveal d${i % 3}">
     <div class="proj-veil"></div>
-    <img src="${p.img}" alt="${p.alt}" loading="lazy">
+    <img src="${p.img}" data-img-key="${p.img.split('/').pop().replace('.jpg','')}" alt="${p.alt}" loading="lazy">
     <div class="proj-meta">
       <span class="tag">${p.tag}</span>
       <h3>${p.titleEn} <span class="ar">${p.titleAr}</span></h3>
@@ -602,6 +639,107 @@ projGrid.innerHTML = PROJECTS.map((p, i) => `
     </div>
   </article>
 `).join('');
+
+/* ---------- construction & finishing phases (edit this list to change stages/steps) ---------- */
+/* Each group is [English, العربية]; steps are [English, العربية]. Leave a group title '' for a plain list. */
+const PHASES = [
+  { n:'01', en:'Pre-Construction', ar:'مرحلة ما قبل البناء', img:'images/phase-1.jpg', groups:[
+    { en:'Site Handover', ar:'استلام الأرض', steps:[['Receiving plot boundaries','استلام حدود القسيمة'],['Reviewing area & setbacks','مراجعة المساحة والارتدادات'],['Reviewing levels','مراجعة المناسيب'],['Confirming the plan matches reality','التأكد من مطابقة المخطط مع الواقع']]},
+    { en:'Surveying', ar:'الأعمال المساحية', steps:[['Setting out the axes','توقيع المحاور'],['Marking building boundaries','تحديد حدود المبنى'],['Setting the zero level','تحديد منسوب الصفر'],['Reviewing all dimensions','مراجعة جميع الأبعاد']]},
+    { en:'Soil Investigation', ar:'فحص التربة', steps:[['Boreholes','إجراء الجسات'],['Soil bearing capacity','معرفة قدرة تحمل التربة'],['Groundwater level','تحديد منسوب المياه الجوفية'],['Choosing the right foundations','تحديد نوع الأساسات المناسبة']]},
+    { en:'Engineering Office', ar:'المكتب الهندسي', steps:[['Architectural design','التصميم المعماري'],['Structural design','التصميم الإنشائي'],['Electrical design','التصميم الكهربائي'],['Plumbing design','التصميم الصحي'],['HVAC & ventilation design','تصميم التكييف والتهوية'],['Coordinating all drawings','تنسيق جميع المخططات']]},
+    { en:'Permits', ar:'استخراج التراخيص', steps:[['Kuwait Municipality','بلدية الكويت'],['Ministry of Electricity & Water','وزارة الكهرباء والماء'],['Ministry of Communications','وزارة المواصلات'],['Ministry of Public Works (if needed)','وزارة الأشغال (عند الحاجة)'],['Other authorities as required','الجهات الأخرى حسب المشروع']]},
+    { en:'Contractor Selection', ar:'اختيار المقاول', steps:[['Reviewing experience','مراجعة الخبرة'],['Reviewing quality','مراجعة الجودة'],['Reviewing the schedule','مراجعة الجدول الزمني'],['Reviewing guarantees','مراجعة الضمانات'],['Signing the contract','توقيع العقد']]},
+    { en:'Site Setup', ar:'تجهيز الموقع', steps:[['Fencing the site','تسوير الموقع'],['Project board','لوحة المشروع'],['Materials store','تجهيز مخزن المواد'],['Site office','تجهيز مكتب الموقع'],['Safety measures','توفير وسائل السلامة']]},
+    { en:'Temporary Services', ar:'الخدمات المؤقتة', steps:[['Temporary power','كهرباء مؤقتة'],['Temporary water','مياه مؤقتة'],['Site lighting','إنارة الموقع']]},
+  ]},
+  { n:'02', en:'Structural Frame', ar:'مرحلة الهيكل الإنشائي', img:'images/phase-2.jpg', groups:[
+    { en:'Excavation', ar:'الحفر', steps:[['Setting levels','تحديد المناسيب'],['Excavation works','أعمال الحفر'],['Removing spoil','إزالة ناتج الحفر']]},
+    { en:'Dewatering', ar:'سحب المياه الجوفية', steps:[['Installing pumps','تركيب مضخات'],['Keeping the excavation dry','المحافظة على جفاف الحفر']]},
+    { en:'Shoring', ar:'تدعيم الحفر', steps:[['Protecting excavation sides','حماية جوانب الحفر'],['Keeping the site safe','المحافظة على سلامة الموقع']]},
+    { en:'Blinding Concrete', ar:'صبة النظافة', steps:[['Backfill layer','فرش الدفان'],['Blinding pour','صبة النظافة'],['Marking footing locations','تحديد مواقع القواعد']]},
+    { en:'Foundations', ar:'القواعد', steps:[['Steel fixing','الحدادة'],['Formwork','النجارة'],['Pouring','الصب'],['Curing','المعالجة']]},
+    { en:'Foundation Waterproofing', ar:'عزل القواعد', steps:[['Cleaning the surface','تنظيف السطح'],['Applying the membrane','تنفيذ العزل'],['Protecting the membrane','حماية العزل']]},
+    { en:'Basement', ar:'السرداب', steps:[['Walls','الجدران'],['Columns','الأعمدة'],['Waterproofing','العزل'],['Basement floor','أرضية السرداب']]},
+    { en:'Columns', ar:'الأعمدة', steps:[['Steel fixing','الحدادة'],['Formwork','النجارة'],['Pouring','الصب']]},
+    { en:'Beams', ar:'الجسور', steps:[['Steel fixing','الحدادة'],['Formwork','النجارة'],['Pouring','الصب']]},
+    { en:'Slabs', ar:'الأسقف', steps:[['Steel fixing','الحدادة'],['Formwork','النجارة'],['Service openings','فتحات الخدمات'],['Pouring','الصب'],['Curing','المعالجة']]},
+    { en:'Stairs', ar:'السلالم', steps:[['Steel fixing','الحدادة'],['Formwork','النجارة'],['Pouring','الصب']]},
+    { en:'Elevator Shaft', ar:'بئر المصعد', steps:[['Execution','التنفيذ'],['Coordination with the lift company','التنسيق مع شركة المصاعد']]},
+  ]},
+  { n:'03', en:'MEP Works', ar:'الأعمال الكهروميكانيكية', img:'images/phase-3.jpg', groups:[
+    { en:'Plumbing', ar:'الأعمال الصحية', steps:[['Supply piping','تمديدات التغذية'],['Drainage piping','تمديدات الصرف'],['Inspection chambers','غرف التفتيش'],['Tanks','الخزانات'],['Water heaters','السخانات'],['Pressure testing','اختبار الضغط']]},
+    { en:'Electrical', ar:'الأعمال الكهربائية', steps:[['Conduits','المواسير'],['Back boxes','العلب'],['Distribution boards','اللوحات'],['Lighting','الإضاءة'],['Switches','المفاتيح'],['Smart-home systems','أنظمة المنزل الذكي']]},
+    { en:'Air Conditioning', ar:'التكييف', steps:[['Ductwork','الدكت'],['AC units','وحدات التكييف'],['Return air','الهواء الراجع'],['Fresh air','الهواء النقي'],['Insulation','العزل']]},
+    { en:'Ventilation', ar:'التهوية', steps:[['Exhaust fans','مراوح الشفط'],['Bathroom ventilation','تهوية الحمامات'],['Kitchen ventilation','تهوية المطابخ'],['Car-park ventilation','تهوية المواقف']]},
+    { en:'Services Coordination', ar:'تنسيق الخدمات', steps:[['Clash review','مراجعة التعارضات'],['Openings review','مراجعة الفتحات'],['Approving shop drawings','اعتماد مخططات التنفيذ']]},
+  ]},
+  { n:'04', en:'Insulation & Waterproofing', ar:'أعمال العزل', img:'images/phase-4.jpg', groups:[
+    { en:'Basement', ar:'عزل السرداب', steps:[['Wall waterproofing','عزل الجدران'],['Floor waterproofing','عزل الأرضيات']]},
+    { en:'Bathrooms', ar:'عزل الحمامات', steps:[['Surface preparation','تجهيز السطح'],['Applying the membrane','تنفيذ العازل'],['Flood test','اختبار الغمر']]},
+    { en:'Roofs', ar:'عزل الأسطح', steps:[['Forming the falls','تشكيل الميول'],['Thermal insulation','العازل الحراري'],['Waterproofing membrane','العازل المائي']]},
+    { en:'Pools', ar:'عزل المسابح', steps:[['Surface preparation','تجهيز السطح'],['Applying the membrane','تنفيذ العزل'],['Flood test','اختبار الغمر']]},
+  ]},
+  { n:'05', en:'Blockwork & Façades', ar:'أعمال الطابوق والواجهات', img:'images/phase-5.jpg', groups:[
+    { en:'Blockwork', ar:'الطابوق', steps:[['White block','الطابوق الأبيض'],['Black block','الطابوق الأسود'],['Thermal insulation','العازل الحراري'],['Tying walls to columns','ربط الجدران بالأعمدة']]},
+    { en:'Façades', ar:'الواجهات', steps:[['Stone cladding','الحجر'],['Mechanical fixing','التثبيت الميكانيكي'],['Treating the joints','معالجة الفواصل'],['Insulation behind the stone','العزل خلف الحجر']]},
+  ]},
+  { n:'06', en:'Finishing Works', ar:'أعمال التشطيبات', img:'images/phase-6.jpg', groups:[
+    { en:'Plastering', ar:'اللياسة', steps:[['Mesh','الشبك'],['Corner beads','الزوايا'],['Scratch coat','اللياسة الخشنة'],['Finish coat','اللياسة الناعمة']]},
+    { en:'Flooring', ar:'الأرضيات', steps:[['Screed','السكريد'],['Porcelain','البورسلان'],['Marble','الرخام']]},
+    { en:'Ceilings', ar:'الأسقف', steps:[['Gypsum','الجبس'],['Decorative work','الديكور']]},
+    { en:'Painting', ar:'الصبغ', steps:[['Putty','المعجون'],['Primer','البرايمر'],['Final coat','الصبغ النهائي']]},
+    { en:'Aluminium & Glass', ar:'الألمنيوم والزجاج', steps:[['Windows','الشبابيك'],['Doors','الأبواب'],['Glass façades','الواجهات الزجاجية']]},
+    { en:'Joinery', ar:'النجارة', steps:[['Doors','الأبواب'],['Wardrobes','الخزائن'],['Kitchens','المطابخ']]},
+  ]},
+  { n:'07', en:'Special Works', ar:'الأعمال الخاصة', img:'images/phase-7.jpg', groups:[
+    { en:'', ar:'', steps:[['Elevator','المصعد'],['Swimming pool','المسبح'],['Pergolas','البرجولات'],['Landscape','اللاندسكيب'],['Irrigation networks','شبكات الري'],['External lighting','الإنارة الخارجية']]},
+  ]},
+  { n:'08', en:'Testing & Handover', ar:'الاختبارات والتسليم', img:'images/phase-8.jpg', groups:[
+    { en:'', ar:'', steps:[['Pressure testing','اختبار الضغط'],['Drainage testing','اختبار الصرف'],['Waterproofing testing','اختبار العزل'],['Commissioning the AC systems','تشغيل أنظمة التكييف'],['Energising the electrics','تشغيل الكهرباء'],['Snag list','قائمة الملاحظات'],['Final inspection','الفحص النهائي'],['Handover','التسليم'],['Warranty','الضمان']]},
+  ]},
+  { n:'09', en:'Common Construction Mistakes', ar:'الأخطاء الشائعة في البناء', img:'images/phase-9.jpg', groups:[
+    { en:'', ar:'', steps:[['Excavation mistakes','أخطاء الحفر'],['Concrete mistakes','أخطاء الخرسانة'],['Reinforcement mistakes','أخطاء التسليح'],['Waterproofing mistakes','أخطاء العزل'],['HVAC mistakes','أخطاء التكييف'],['Plumbing mistakes','أخطاء الصحي'],['Electrical mistakes','أخطاء الكهرباء'],['Stone mistakes','أخطاء الحجر'],['Plastering mistakes','أخطاء اللياسة'],['Tiling mistakes','أخطاء البلاط'],['Painting mistakes','أخطاء الصبغ'],['Aluminium & glass mistakes','أخطاء الألمنيوم والزجاج']]},
+  ]},
+  { n:'10', en:'Quality Standards', ar:'معايير الجودة في Urban Projects', img:'images/phase-10.jpg', groups:[
+    { en:'Concrete', ar:'الخرسانة', steps:[['Checking the steel','فحص الحديد'],['Concrete cover','الغطاء الخرساني'],['Cube testing','اختبار المكعبات'],['Curing','المعالجة']]},
+    { en:'Waterproofing', ar:'العزل', steps:[['Flood test','اختبار الغمر'],['Protecting the membrane','حماية العازل'],['Approving execution','اعتماد التنفيذ']]},
+    { en:'Plumbing', ar:'الأعمال الصحية', steps:[['Pressure testing','اختبار الضغط'],['Drainage testing','اختبار الصرف'],['Approving the falls','اعتماد الميول']]},
+    { en:'Electrical', ar:'الكهرباء', steps:[['Insulation testing','اختبار العزل'],['Board testing','اختبار اللوحات'],['Functional testing','اختبار التشغيل']]},
+    { en:'Air Conditioning', ar:'التكييف', steps:[['Airflow testing','اختبار الهواء'],['Balancing','اختبار التوازن'],['Functional testing','اختبار التشغيل']]},
+    { en:'Finishes', ar:'التشطيبات', steps:[['Matching samples','مطابقة العينات'],['Workmanship quality','جودة التنفيذ'],['Final acceptance','الاستلام النهائي']]},
+  ]},
+  { n:'11', en:'Checklists', ar:'قوائم الفحص', img:'images/phase-11.jpg', groups:[
+    { en:'', ar:'', steps:[['Pre-execution checklist','قائمة فحص ما قبل التنفيذ'],['Excavation checklist','قائمة فحص الحفر'],['Foundations checklist','قائمة فحص القواعد'],['Concrete checklist','قائمة فحص الخرسانة'],['Waterproofing checklist','قائمة فحص العزل'],['Plumbing checklist','قائمة فحص الصحي'],['Electrical checklist','قائمة فحص الكهرباء'],['HVAC checklist','قائمة فحص التكييف'],['Finishing checklist','قائمة فحص التشطيبات'],['Final pre-handover checklist','قائمة الفحص النهائي قبل التسليم']]},
+  ]},
+];
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const phaseList = document.getElementById('phaseList');
+phaseList.innerHTML = PHASES.map((ph, i) => `
+  <div class="phase reveal">
+    <button class="phase-head" aria-expanded="false">
+      <span class="phase-num">${ph.n}</span>
+      <img class="phase-thumb" src="${ph.img}" data-img-key="phase-${i+1}" alt="${esc(ph.en)}" loading="lazy">
+      <div class="phase-title"><h3>${esc(ph.en)} <span class="ar">${esc(ph.ar)}</span></h3></div>
+      <span class="phase-toggle">+</span>
+    </button>
+    <div class="phase-body"><div class="phase-body-inner">
+      ${ph.groups.map(g => `
+        <div class="pgroup">
+          ${g.en || g.ar ? `<h4>${esc(g.en)} <span class="ar">${esc(g.ar)}</span></h4>` : ''}
+          <ul>${g.steps.map(s => `<li>${esc(s[0])}<span class="ar">${esc(s[1])}</span></li>`).join('')}</ul>
+        </div>`).join('')}
+    </div></div>
+  </div>
+`).join('');
+phaseList.querySelectorAll('.phase-head').forEach(head => {
+  head.addEventListener('click', () => {
+    const phase = head.closest('.phase');
+    const open = phase.classList.toggle('open');
+    head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    head.querySelector('.phase-toggle').textContent = open ? '×' : '+';
+  });
+});
 
 /* ---------- reveal + mask on scroll ---------- */
 const io = new IntersectionObserver((entries) => {
@@ -702,6 +840,139 @@ newsForm.addEventListener('submit', async (e) => {
     setTimeout(() => { btn.textContent = '→'; }, 1800);
   }
 });
+
+/* ============================================================
+   ADMIN PHOTO MANAGER
+   • Always: apply any saved photo overrides (so your swaps persist on this device).
+   • Open admin by adding ?admin to the URL, e.g. .../UrbanProjectkw/?admin
+   • Swap = instant local preview (saved in this browser).
+   • Publish = commits the photos to the repo so ALL visitors see them
+     (needs a GitHub token with Contents: read & write on this repo).
+   ============================================================ */
+(function(){
+  const REPO = 'msalfahad/UrbanProjectkw';
+  const LS_IMG = 'up_img_';      // localStorage prefix for image overrides (data URLs)
+  const LS_TOKEN = 'up_gh_token';
+
+  // key -> file path in the repo
+  function keyToPath(key){
+    const file = (key === 'logofill') ? 'logo-fill.jpg' : key + '.jpg';
+    return 'marketing-site/images/' + file;
+  }
+  function applyOverrideTo(el){
+    const data = localStorage.getItem(LS_IMG + el.dataset.imgKey);
+    if(!data) return;
+    if(el.tagName === 'IMG') el.src = data;
+    else el.style.backgroundImage = `url('${data}')`;
+  }
+  function applyAllOverrides(){ document.querySelectorAll('[data-img-key]').forEach(applyOverrideTo); }
+  applyAllOverrides(); // run on every load, admin or not
+
+  // Only wire the editing UI when admin mode is requested
+  const params = new URLSearchParams(location.search);
+  if(!params.has('admin')) return;
+
+  document.body.classList.add('admin-on');
+  const bar = document.getElementById('adminBar');
+  const statusEl = document.getElementById('adminStatus');
+  const fileInput = document.getElementById('adminFile');
+  const tokenInput = document.getElementById('adminToken');
+  const publishBtn = document.getElementById('adminPublish');
+  const resetBtn = document.getElementById('adminReset');
+  const exitBtn = document.getElementById('adminExit');
+  tokenInput.value = localStorage.getItem(LS_TOKEN) || '';
+  let currentKey = null;
+  const setStatus = m => statusEl.textContent = m;
+
+  // click a highlighted photo -> pick a replacement (intercept before other handlers)
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-img-key]');
+    if(!el) return;
+    e.preventDefault(); e.stopPropagation();
+    currentKey = el.dataset.imgKey;
+    fileInput.click();
+  }, true);
+
+  // shrink big photos so they fit in browser storage and load fast
+  function scaleToDataURL(file, maxDim=1600, quality=0.82){
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        let {width, height} = img;
+        if(Math.max(width, height) > maxDim){
+          const s = maxDim / Math.max(width, height);
+          width = Math.round(width*s); height = Math.round(height*s);
+        }
+        const c = document.createElement('canvas');
+        c.width = width; c.height = height;
+        c.getContext('2d').drawImage(img, 0, 0, width, height);
+        URL.revokeObjectURL(img.src);
+        resolve(c.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = reject;
+      img.src = URL.createObjectURL(file);
+    });
+  }
+
+  fileInput.addEventListener('change', async () => {
+    const file = fileInput.files[0];
+    if(!file || !currentKey) return;
+    setStatus('Processing photo…');
+    try{
+      const dataURL = await scaleToDataURL(file);
+      localStorage.setItem(LS_IMG + currentKey, dataURL);
+      document.querySelectorAll(`[data-img-key="${currentKey}"]`).forEach(applyOverrideTo);
+      setStatus(`Updated "${currentKey}". Preview saved on this device — press "Publish" to make it live for visitors.`);
+    }catch(err){
+      setStatus(err && /quota/i.test(err.name||'') ? 'Browser storage is full — publish or reset some photos first.' : 'Could not read that image. Try a JPG or PNG.');
+    }finally{
+      fileInput.value = '';
+    }
+  });
+
+  // publish every locally-changed photo to the repo via the GitHub API
+  async function ghPut(path, base64, token){
+    const api = `https://api.github.com/repos/${REPO}/contents/${path}`;
+    const headers = { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' };
+    let sha;
+    const g = await fetch(`${api}?ref=main`, { headers });
+    if(g.ok) sha = (await g.json()).sha;
+    const put = await fetch(api, {
+      method: 'PUT', headers,
+      body: JSON.stringify({ message: `Update ${path} via admin photo manager`, content: base64, sha, branch: 'main' })
+    });
+    if(!put.ok) throw new Error(`${put.status} ${await put.text()}`);
+  }
+
+  publishBtn.addEventListener('click', async () => {
+    const token = tokenInput.value.trim();
+    const keys = Object.keys(localStorage).filter(k => k.startsWith(LS_IMG)).map(k => k.slice(LS_IMG.length));
+    if(!token){ setStatus('Paste a GitHub token first (Contents: read & write on this repo) to publish.'); return; }
+    if(!keys.length){ setStatus('No changed photos to publish yet — swap a photo first.'); return; }
+    localStorage.setItem(LS_TOKEN, token);
+    publishBtn.disabled = true;
+    let done = 0;
+    try{
+      for(const key of keys){
+        setStatus(`Publishing ${++done}/${keys.length}: ${key}…`);
+        const base64 = localStorage.getItem(LS_IMG + key).split(',')[1];
+        await ghPut(keyToPath(key), base64, token);
+      }
+      setStatus(`✓ Published ${keys.length} photo(s). They go live in ~1–2 minutes once the site rebuilds.`);
+    }catch(err){
+      setStatus('Publish failed: ' + (err.message || err) + ' — check the token has Contents write access.');
+    }finally{
+      publishBtn.disabled = false;
+    }
+  });
+
+  resetBtn.addEventListener('click', () => {
+    if(!confirm('Remove all photo changes saved on this device and restore the current site photos?')) return;
+    Object.keys(localStorage).filter(k => k.startsWith(LS_IMG)).forEach(k => localStorage.removeItem(k));
+    location.reload();
+  });
+  exitBtn.addEventListener('click', () => { location.href = location.pathname; });
+})();
 </script>
 </body>
 </html>
