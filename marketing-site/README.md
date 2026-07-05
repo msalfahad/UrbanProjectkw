@@ -37,17 +37,23 @@ The logo files (`logo-transparent.png`, `logo-white.png`) are your uploaded Urba
 All text is in `index.html`. English lines use normal text; Arabic lines sit right after
 inside `<span class="ar">…</span>`. Edit either freely.
 
-## Editing the projects list
-Portfolio cards are rendered from the `PROJECTS` array near the top of the `<script>` block
-in `index.html`. Add, remove or reorder entries there — each needs `tag`, `titleEn`, `titleAr`,
-`img` and `alt`.
+## Editing the services list
+The "Our Services" overview is rendered from the `SERVICES` array in the `<script>` block of
+`index.html`. Each entry has `en`, `ar`, `descEn`, `descAr`. Add/edit/reorder freely.
 
-## Editing the Construction & Finishing process
-The stages shown in the "Construction & Finishing Process" section are rendered from the
-`PHASES` array in the `<script>` block. Each phase has an English + Arabic title, a thumbnail
-`img`, and `groups`; each group has an English + Arabic sub-title and a list of `steps`, where
-every step is a `[English, العربية]` pair. Add/edit/reorder freely — the page rebuilds the
-accordion from this list.
+## Editing the Our Work gallery (categories, captions, carousels)
+The category cards under "Our Work" are rendered from the `GALLERY` array in the `<script>`
+block. Each category has an English + Arabic title and a `photos` list. Each photo has:
+
+- `key`  — its image filename without extension (e.g. `finishing-1` → `images/finishing-1.jpg`);
+  this is also what makes the photo swappable in admin mode.
+- `img`  — the path shown on the page.
+- `en` / `ar` — the caption shown on the photo, e.g. `العزل الحراري بأعلى جودة`.
+
+If a category has more than one photo, the card automatically shows arrows, dots and thumbnails
+so visitors can scroll through them. To add a photo, add another `{ key, img, en, ar }` entry and
+drop the matching file into `images/`. To add a whole new category, copy a `{ ... photos:[...] }`
+block.
 
 ## Admin — upload & publish photos yourself
 Every photo on the site can be swapped from your browser, no code needed.
@@ -65,8 +71,8 @@ Every photo on the site can be swapped from your browser, no code needed.
      your browser.
 4. **Reset photos** removes your local changes; **Exit** leaves admin mode.
 
-Each photo is its own file in `images/` (e.g. `hero.jpg`, `project-1.jpg`, `phase-1.jpg`,
-`gallery-1.jpg`), so swapping one never affects the others.
+Each photo is its own file in `images/` (e.g. `hero.jpg`, `about.jpg`, `finishing-1.jpg`,
+`structure-1.jpg`, `insulation-1.jpg`, `facades-1.jpg`), so swapping one never affects the others.
 
 ## Deploying to Firebase Hosting
 This folder is wired up as a second Firebase Hosting site (target `marketing`), separate from
