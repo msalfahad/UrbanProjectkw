@@ -69,10 +69,21 @@ Every photo on the site can be swapped from your browser, no code needed.
      Generate new token**. Give it access to **only** the `UrbanProjectkw` repo, with
      **Repository permissions → Contents → Read and write**. Paste it once; it's stored only in
      your browser.
-4. **Reset photos** removes your local changes; **Exit** leaves admin mode.
+4. **Reset** removes your local changes; **Exit** leaves admin mode.
 
-Each photo is its own file in `images/` (e.g. `hero.jpg`, `about.jpg`, `finishing-1.jpg`,
-`structure-1.jpg`, `insulation-1.jpg`, `facades-1.jpg`), so swapping one never affects the others.
+### Adding new photos yourself (with names & captions)
+In admin mode each category card has a **“＋ Add photo”** button:
+
+1. Click it, pick an image, and fill in **Photo name**, **English caption**, and **Arabic caption**.
+2. The photo is added to that category's carousel instantly (preview on your device).
+3. Use **🗑 Delete current** to remove the photo currently shown in a card.
+4. Press **Publish** — your new/changed images are committed to `images/`, and the whole
+   gallery (categories, photos, captions, order) is saved to `content/gallery.json`. The live
+   site reads that file, so everyone sees your additions after the ~1–2 minute rebuild.
+
+You never need to touch code to add photos — the built-in `GALLERY` list is only the starting
+point; once `content/gallery.json` exists it takes over. Each photo is its own file in `images/`,
+so swapping or adding one never affects the others.
 
 ## Deploying to Firebase Hosting
 This folder is wired up as a second Firebase Hosting site (target `marketing`), separate from
