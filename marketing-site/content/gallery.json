@@ -1,0 +1,158 @@
+{
+  "categories": [
+    {
+      "tagEn": "Category",
+      "en": "Finishing",
+      "ar": "تشطيبات",
+      "photos": [
+        {
+          "key": "finishing-1",
+          "img": "images/finishing-1.jpg",
+          "title": "Finishing 01",
+          "en": "Premium interior finishing under engineering supervision.",
+          "ar": "تشطيبات داخلية فاخرة بإشراف هندسي."
+        },
+        {
+          "key": "finishing-2",
+          "img": "images/finishing-2.jpg",
+          "title": "Finishing 02",
+          "en": "Final finishing executed with high precision.",
+          "ar": "تنفيذ التشطيبات النهائية بدقة عالية."
+        },
+        {
+          "key": "finishing-3",
+          "img": "images/finishing-3.jpg",
+          "title": "Finishing 03",
+          "en": "Professional wall and ceiling finishing.",
+          "ar": "تشطيب الجدران والأسقف باحترافية."
+        },
+        {
+          "key": "finishing-1783455997007",
+          "img": "images/finishing-1783455997007.jpg",
+          "title": "finishing-1783455997007",
+          "en": "",
+          "ar": ""
+        },
+        {
+          "key": "finishing-1783456026256",
+          "img": "images/finishing-1783456026256.jpg",
+          "title": "finishing-1783456026256",
+          "en": "",
+          "ar": ""
+        },
+        {
+          "key": "finishing-1783456038138",
+          "img": "images/finishing-1783456038138.jpg",
+          "title": "finishing-1783456038138",
+          "en": "",
+          "ar": ""
+        },
+        {
+          "key": "finishing-1783456049202",
+          "img": "images/finishing-1783456049202.jpg",
+          "title": "finishing-1783456049202",
+          "en": "",
+          "ar": ""
+        },
+        {
+          "key": "finishing-1783456065671",
+          "img": "images/finishing-1783456065671.jpg",
+          "title": "finishing-1783456065671",
+          "en": "",
+          "ar": ""
+        },
+        {
+          "key": "finishing-1783456075564",
+          "img": "images/finishing-1783456075564.jpg",
+          "title": "finishing-1783456075564",
+          "en": "",
+          "ar": ""
+        }
+      ]
+    },
+    {
+      "tagEn": "Category",
+      "en": "Structural Frame",
+      "ar": "هيكل أسود",
+      "photos": [
+        {
+          "key": "structure-1",
+          "img": "images/structure-1.jpg",
+          "title": "Structural Frame 01",
+          "en": "Concrete structure executed under engineering supervision.",
+          "ar": "تنفيذ الهيكل الخرساني تحت إشراف هندسي."
+        },
+        {
+          "key": "structure-2",
+          "img": "images/structure-2.jpg",
+          "title": "Structural Frame 02",
+          "en": "Columns and slabs poured to specification.",
+          "ar": "صب الأعمدة والأسقف حسب المواصفات."
+        },
+        {
+          "key": "structure-3",
+          "img": "images/structure-3.jpg",
+          "title": "Structural Frame 03",
+          "en": "Professional steel reinforcement works.",
+          "ar": "أعمال الحديد والتسليح باحترافية."
+        }
+      ]
+    },
+    {
+      "tagEn": "Category",
+      "en": "Waterproofing & Thermal Insulation",
+      "ar": "عزل مائي وحراري",
+      "photos": [
+        {
+          "key": "insulation-1",
+          "img": "images/insulation-1.jpg",
+          "title": "Insulation 01",
+          "en": "High-quality thermal insulation.",
+          "ar": "العزل الحراري بأعلى جودة."
+        },
+        {
+          "key": "insulation-2",
+          "img": "images/insulation-2.jpg",
+          "title": "Insulation 02",
+          "en": "Waterproofing for roofs and bathrooms.",
+          "ar": "العزل المائي للأسطح والحمامات."
+        },
+        {
+          "key": "insulation-3",
+          "img": "images/insulation-3.jpg",
+          "title": "Insulation 03",
+          "en": "Protecting the building from moisture and heat.",
+          "ar": "حماية المبنى من الرطوبة والحرارة."
+        }
+      ]
+    },
+    {
+      "tagEn": "Category",
+      "en": "Exterior Facades",
+      "ar": "واجهات خارجية",
+      "photos": [
+        {
+          "key": "facades-1",
+          "img": "images/facades-1.jpg",
+          "title": "Facade 01",
+          "en": "Exterior facades executed with premium materials.",
+          "ar": "تنفيذ الواجهات الخارجية بمواد فاخرة."
+        },
+        {
+          "key": "facades-2",
+          "img": "images/facades-2.jpg",
+          "title": "Facade 02",
+          "en": "Professional facade stone installation.",
+          "ar": "تركيب حجر الواجهات باحترافية."
+        },
+        {
+          "key": "facades-3",
+          "img": "images/facades-3.jpg",
+          "title": "Facade 03",
+          "en": "Modern facade finishing.",
+          "ar": "تشطيب الواجهات بمظهر عصري."
+        }
+      ]
+    }
+  ]
+}
